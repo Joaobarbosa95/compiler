@@ -1,0 +1,26 @@
+------- Frontend -------
+1 → lexical analysis (scanning, lexing)
+    A scanner or lexer, takes a string of characters and chunks them together into a series to form "words". These words are refered to as tokens. 
+
+2 → parsing
+this is where our syntax gets a grammar
+takes a flat sequence of tokens and builds a tree - parse tree, AST, syntax tree or just trees. 
+
+3 → static analysis
+    3.1 binding or resolution
+        for each identifier, we find out where the name is defined and wire the two together.
+
+    here scope comes into play.
+    if statically typed, here is where we type check and report type errors
+    
+All this info needs to be stored somewhere:
+    - can be as attributes in the syntax tree (extra nodes initialized during parsing that are filled later)
+    - lookup table off to the side.
+      keys to the table are usually identifiers(names of the variables and declarations - syntax table)
+    - transform the tree into a more powerful data structure
+    
+
+
+------ Middle end ------
+
+Backend
