@@ -6,21 +6,21 @@
 
 struct ErrorList;
 
-struct ErrorList {
+typedef struct ErrorList {
     int line;       
     int column;
     char* message;
     struct ErrorList* next;
-};
+} ErrorList;
 
 void addToErrorList(
-        struct ErrorList** errorListHead, 
-        struct ErrorList** errorListTail, 
+        ErrorList** errorListHead, 
+        ErrorList** errorListTail, 
         int line, 
         int column, 
         char* message
 );
 
-void printErrorList(struct ErrorList** errorListHead);
+void printErrorList(ErrorList** errorListHead);
 
 #endif

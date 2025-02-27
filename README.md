@@ -1,4 +1,4 @@
 # Description
-First compiler in C. 
+First interpreter in C. 
 
 

@@ -1,5 +1,7 @@
-#ifndef _LANG_H
-#define _LANG_H
+#include <stdio.h>
+
+#ifndef TOKEN_H
+#define TOKEN_H
 
 enum TokenType {
   // Single-character tokens.
@@ -19,7 +21,17 @@ enum TokenType {
   AND, CLASS, ELSE, FALSE, FUN, FOR, IF, NIL, OR,
   PRINT, RETURN, SUPER, THIS, TRUE, VAR, WHILE,
 
-  EOF
-}
+  EOFF
+};
 
-#endif
+typedef struct Token {
+    enum TokenType tokenType;
+    char* lexeme;
+    char* literal; 
+    int line;
+} Token;
+
+Token* buildToken(enum TokenType tokenType, char* lexeme, char* literal, int line); 
+void addToTokenList(Token* token);
+
+#endif 
